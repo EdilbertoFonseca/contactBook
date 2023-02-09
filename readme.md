@@ -8,7 +8,7 @@ Welcome to the NVDA Address Book Addon! This is a plugin specially designed to h
 
 Here are step-by-step instructions for installing the Address Book Add-on in NVDA:
 
-1. Download the Add-on installation file [Contact Book](https://github.com/EdilbertoFonseca/contactBook).
+1. Download the Add-on installation file [Contact Book](https://github.com/EdilbertoFonseca/contactBook/releases/download/v1.0/contactBook-2023.1.0.nvda-addon).
 2. Press enter on the add-on you downloaded.
 3. Follow the on-screen instructions to install the Add-on.
 4. Restart NVDA.
