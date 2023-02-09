@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the 'contactBook' package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'contactBook' '2023.1.0'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2023-02-09 08:07-0300\n"
+"PO-Revision-Date: 2023-02-09 08:11-0300\n"
+"Last-Translator: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
+"Language-Team: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SearchPath-0: globalPlugins/contactBook\n"
+"X-Poedit-SearchPath-1: buildVars.py\n"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on to be shown
+#. on installation and add-on information.
+#: buildVars.py:22
+#| msgid "Agenda de contatos"
+msgid "Agenda de contatos para o NVDA."
+msgstr "Address book for NVDA."
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on
+#. on add-on information from add-ons manager
+#: buildVars.py:26
+msgid ""
+"Este add-on cria uma agenda onde podemos salvar nÃºmeros de telefones, e-"
+"mail de pessoas e empresas que jugamos necessÃ¡rios."
+msgstr ""
+"This add-on creates an agenda where we can save phone numbers, e-mails "
+"of people and companies that we deem necessary."
+
+#. Translators: Lists all contacts registered in the phonebook.
+#: globalPlugins/contactBook/__init__.py:33
+msgid "&Lista de contatos"
+msgstr "&Contact list"
+
+#. Translators: Open the help page.
+#: globalPlugins/contactBook/__init__.py:37
+msgid "&Ajuda"
+msgstr "&Help"
+
+#. gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_onHelp, help)
+#. Translators: Menu About the add-on.
+#: globalPlugins/contactBook/__init__.py:41
+msgid "&Sobre"
+msgstr "&About"
+
+#. gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_showAbout, about)
+#. Translators: Creates the item in the NVDA menu.
+#: globalPlugins/contactBook/__init__.py:45
+msgid "&Agenda de contatos"
+msgstr "&Contact Book"
+
+#: globalPlugins/contactBook/__init__.py:47
+msgid "Lista todos os cadastros da agenda."
+msgstr "Lists all entries in the agenda."
+
+#: globalPlugins/contactBook/__init__.py:47
+msgid "Agenda de contatos"
+msgstr "contact book"
+
+#. Tradutors: Title of contact list dialog box.
+#: globalPlugins/contactBook/__init__.py:50
+msgid "Lista de contatos."
+msgstr "Contact list."
+
+#: globalPlugins/contactBook/addEditRecord.py:22
+msgid "Adicionar"
+msgstr "Add"
+
+#: globalPlugins/contactBook/addEditRecord.py:26
+msgid "{} Registro"
+msgstr "{} Record"
+
+#: globalPlugins/contactBook/addEditRecord.py:50
+msgid "Novo registro"
+msgstr "new record"
+
+#: globalPlugins/contactBook/addEditRecord.py:54
+msgid "Nome: "
+msgstr "Name:"
+
+#: globalPlugins/contactBook/addEditRecord.py:58
+msgid "Celular: "
+msgstr "Cell phone:"
+
+#: globalPlugins/contactBook/addEditRecord.py:62
+msgid "Telefone fixo:"
+msgstr "Landline:"
+
+#: globalPlugins/contactBook/addEditRecord.py:66
+msgid "E-mail: "
+msgstr "Email:"
+
+#: globalPlugins/contactBook/addEditRecord.py:70
+#, python-format
+msgid "&%s contato"
+msgstr "&%s contact"
+
+#: globalPlugins/contactBook/addEditRecord.py:71
+msgid "&Fechar"
+msgstr "&Close"
+
+#. Translators: Dialog displayed when one of the required fields is empty.
+#: globalPlugins/contactBook/addEditRecord.py:106
+msgid "Nome, celular e telefone fixo são obrigatórios!"
+msgstr "Name, mobile and landline are required!"
+
+#: globalPlugins/contactBook/addEditRecord.py:107
+#: globalPlugins/contactBook/contactList.py:118
+#: globalPlugins/contactBook/contactList.py:130
+msgid "Erro"
+msgstr "Error"
+
+#. Translators:  Dialog displayed upon completion.
+#: globalPlugins/contactBook/addEditRecord.py:124
+msgid "Contato adicionado"
+msgstr "Added contact"
+
+#: globalPlugins/contactBook/addEditRecord.py:125
+msgid "Sucesso!"
+msgstr "Success!"
+
+#. Translators:  Dialog displayed after editing is complete.
+#: globalPlugins/contactBook/addEditRecord.py:141
+msgid "Contato editado com sucesso!"
+msgstr "Contact successfully edited!"
+
+#: globalPlugins/contactBook/addEditRecord.py:141
+#: globalPlugins/contactBook/contactList.py:137
+msgid "Sucesso"
+msgstr "Success"
+
+#. Translators: Phone formatting checkbox text.
+#: globalPlugins/contactBook/configPanel.py:39
+msgid "&Não usar formatação de telefone"
+msgstr "&Don't use phone formatting"
+
+#. Translators: Checkbox text to display scheduler reset button..
+#: globalPlugins/contactBook/configPanel.py:45
+msgid "&Exibir a opção para apagar toda a agenda"
+msgstr "&Show option to delete entire calendar"
+
+#. Translators: Checkbox text to display import csv files to database button.
+#: globalPlugins/contactBook/configPanel.py:51
+msgid "&Exibir o botão importar arquivo CSV"
+msgstr "&Show Import CSV file button"
+
+#. Translators: Checkbox text to display export csv files to database button.
+#: globalPlugins/contactBook/configPanel.py:58
+msgid "&Exibir o botão exportar arquivo CSV"
+msgstr "&Display CSV file export button"
+
+#: globalPlugins/contactBook/contactList.py:39
+msgid "Procurar por: "
+msgstr "Search for:"
+
+#: globalPlugins/contactBook/contactList.py:42
+msgid "&Buscar"
+msgstr "&Search"
+
+#: globalPlugins/contactBook/contactList.py:44
+msgid "Nenhum registro foi encontrado!"
+msgstr "No records found!"
+
+#: globalPlugins/contactBook/contactList.py:47
+msgid "&Editar"
+msgstr "&Edit"
+
+#: globalPlugins/contactBook/contactList.py:48
+msgid "&Novo"
+msgstr "&New"
+
+#: globalPlugins/contactBook/contactList.py:49
+msgid "&Remover"
+msgstr "&Remove"
+
+#: globalPlugins/contactBook/contactList.py:50
+msgid "&Atualizar"
+msgstr "&Update"
+
+#: globalPlugins/contactBook/contactList.py:51
+msgid "&Importar csv..."
+msgstr "&Import csv..."
+
+#: globalPlugins/contactBook/contactList.py:52
+msgid "E&xportar csv..."
+msgstr "E&xport csv..."
+
+#: globalPlugins/contactBook/contactList.py:53
+msgid "Apagar todos os regis&tros."
+msgstr "Dele&te all records."
+
+#: globalPlugins/contactBook/contactList.py:54
+msgid "&Sair"
+msgstr "&Close"
+
+#: globalPlugins/contactBook/contactList.py:93
+msgid "Nome"
+msgstr "Name"
+
+#: globalPlugins/contactBook/contactList.py:94
+msgid "CELULAR"
+msgstr "CELL PHONE"
+
+#: globalPlugins/contactBook/contactList.py:95
+msgid "Telefone fixo"
+msgstr "Landline"
+
+#: globalPlugins/contactBook/contactList.py:96
+msgid "E-mail"
+msgstr "Email"
+
+#. Translators: Dialog when there is no row selected in the ObjectListView.
+#: globalPlugins/contactBook/contactList.py:118
+#: globalPlugins/contactBook/contactList.py:130
+msgid "Nenhuma linha selecionada!"
+msgstr "No lines selected!"
+
+#: globalPlugins/contactBook/contactList.py:120
+msgid "Editar"
+msgstr "Edit"
+
+#: globalPlugins/contactBook/contactList.py:132
+msgid "Deseja apagar o registro selecionado!"
+msgstr "Do you want to delete the selected record!"
+
+#: globalPlugins/contactBook/contactList.py:132
+msgid "Atenção"
+msgstr "Attention"
+
+#: globalPlugins/contactBook/contactList.py:137
+msgid "Registro apagado !"
+msgstr "Record deleted!"
