@@ -32,26 +32,26 @@ class ContactList(wx.Dialog):
 			self.contactResults = []
 
 		super(ContactList, self).__init__(parent, title=title)
-		listOfOptions = ['Nome', 'Celular', 'Telefone fixo', 'E-mail'] # List of combobox choices option.
+		listOfOptions = [_('Name'), _('Cell phone'), _('Landline'), _('Email')] # List of combobox choices option.
 
 		# Creating the screen objects.
 		panel = wx.Panel(self)
-		labelSearch = wx.StaticText(panel, label=_('Procurar por: '))
-		self.comboboxOptions = wx.ComboBox(panel, value='Nome', choices=listOfOptions)
+		labelSearch = wx.StaticText(panel, label=_('Search for: '))
+		self.comboboxOptions = wx.ComboBox(panel, value='Name', choices=listOfOptions)
 		self.search = wx.SearchCtrl(panel, -1)
-		self.buttonSearch = wx.Button(panel, label=_('&Buscar'))
+		self.buttonSearch = wx.Button(panel, label=_('&Search'))
 		self.contactList = ObjectListView(panel, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
-		self.contactList.SetEmptyListMsg(_('Nenhum registro foi encontrado!'))
+		self.contactList.SetEmptyListMsg(_('No records found!'))
 		self.set_contacts()
 
-		self.buttonEdit = wx.Button(panel, wx.ID_EDIT, label=_('&Editar'))
-		self.buttonNew= wx.Button(panel, wx.ID_NEW, label=_('&Novo'))
-		self.buttonDelete = wx.Button(panel, wx.ID_DELETE, label=_('&Remover'))
-		self.buttonUpdate = wx.Button(panel, -1, label=_('&Atualizar'))
-		self.buttonImport = wx.Button(panel, wx.ID_DELETE, label=_('&Importar csv...'))
-		self.buttonExport = wx.Button(panel, wx.ID_DELETE, label=_('E&xportar csv...'))
-		self.buttonResetRecords = wx.Button(panel, -1, label=_('Apagar todos os regis&tros.'))
-		self.buttonExit = wx.Button(panel, wx.ID_CANCEL, label=_('&Sair'))
+		self.buttonEdit = wx.Button(panel, wx.ID_EDIT, label=_('&Edit'))
+		self.buttonNew= wx.Button(panel, wx.ID_NEW, label=_('&New'))
+		self.buttonDelete = wx.Button(panel, wx.ID_DELETE, label=_('&Remove'))
+		self.buttonRefresh  = wx.Button(panel, -1, label=_('Refres&h'))
+		self.buttonImport = wx.Button(panel, wx.ID_DELETE, label=_('&Import csv...'))
+		self.buttonExport = wx.Button(panel, wx.ID_DELETE, label=_('Ex&port csv...'))
+		self.buttonResetRecords = wx.Button(panel, -1, label=_('&Delete all records.'))
+		self.buttonExit = wx.Button(panel, wx.ID_CANCEL, label=_('E&xit'))
 		self.set_config()
 
 		# Creating the layout and adding it to the panel.
@@ -66,7 +66,7 @@ class ContactList(wx.Dialog):
 		viewSizer.Add(self.contactList, 0, wx.ALL|wx.EXPAND, 5)
 		buttonSizer.Add(self.buttonEdit, 0, wx.ALL|wx.EXPAND, 5)
 		buttonSizer.Add(self.buttonDelete, 0, wx.ALL|wx.EXPAND, 5)
-		buttonSizer.Add(self.buttonUpdate, 0, wx.ALL|wx.EXPAND, 5)
+		buttonSizer.Add(self.buttonRefresh , 0, wx.ALL|wx.EXPAND, 5)
 		buttonSizer.Add(self.buttonImport, 0, wx.ALL|wx.EXPAND, 5)
 		buttonSizer.Add(self.buttonExport, 0, wx.ALL|wx.EXPAND, 5)
 		buttonSizer.Add(self.buttonResetRecords, 0, wx.ALL|wx.EXPAND, 5)
@@ -81,7 +81,7 @@ class ContactList(wx.Dialog):
 		self.buttonEdit.Bind(wx.EVT_BUTTON, self.onEdit, self.buttonEdit)
 		self.buttonNew.Bind(wx.EVT_BUTTON, self.onNew, self.buttonNew)
 		self.buttonDelete.Bind(wx.EVT_BUTTON, self.onDelete, self.buttonDelete)
-		self.buttonUpdate.Bind(wx.EVT_BUTTON, self.onToUpdate, self.buttonUpdate)
+		self.buttonRefresh .Bind(wx.EVT_BUTTON, self.onToUpdate, self.buttonRefresh )
 		self.buttonImport.Bind(wx.EVT_BUTTON, self.onToImport, self.buttonImport)
 		self.buttonExport.Bind(wx.EVT_BUTTON, self.onToExport, self.buttonExport)
 		self.buttonResetRecords.Bind(wx.EVT_BUTTON, self.onReset, self.buttonResetRecords)
@@ -90,10 +90,10 @@ class ContactList(wx.Dialog):
 		# Creating the columns of the ObjectListView.
 	def set_contacts(self):
 		self.contactList.SetColumns([
-			ColumnDefn(_('Nome'), 'left', 200, 'name'),
-			ColumnDefn(_('CELULAR'), 'left', 200, 'cell'),
-			ColumnDefn(_('Telefone fixo'), 'left', 200, 'landline'),
-			ColumnDefn(_('E-mail'), 'left', 200, 'email')
+			ColumnDefn(_('Name'), 'left', 200, 'name'),
+			ColumnDefn(_('Cell phone'), 'left', 200, 'cell'),
+			ColumnDefn(_('Landline'), 'left', 200, 'landline'),
+			ColumnDefn(_('Email'), 'left', 200, 'email')
 		])
 		self.contactList.SetObjects(self.contactResults)
 
@@ -115,9 +115,9 @@ class ContactList(wx.Dialog):
 		selectedRow = self.contactList.GetSelectedObject()
 		if selectedRow == None:
 			# Translators: Dialog when there is no row selected in the ObjectListView.
-			wx.MessageBox(_('Nenhuma linha selecionada!'), _('Erro'))
+			wx.MessageBox(_('No row selected!'), _('Error'))
 			return
-		dlg = AddEditRecDialog( gui.mainFrame, selectedRow, title=_('Editar'), addRecord=False)
+		dlg = AddEditRecDialog( gui.mainFrame, selectedRow, title=_('To edit'), addRecord=False)
 		dlg.ShowModal()
 		dlg.Destroy()
 		self.show_all_records()
@@ -127,14 +127,14 @@ class ContactList(wx.Dialog):
 		selectedRow = self.contactList.GetSelectedObject()
 		if selectedRow == None:
 			# Translators: Dialog when there is no row selected in the ObjectListView.
-			wx.MessageBox(_('Nenhuma linha selecionada!'), _('Erro'))
+			wx.MessageBox(_('No row selected!'), _('Error'))
 			return
-		dlg = wx.MessageDialog(None, _('Deseja apagar o registro selecionado!'), _('Atenção'),
+		dlg = wx.MessageDialog(None, _('Do you want to delete the selected record?'), _('Attention'),
 		wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION)
 		resposta = dlg.ShowModal()
 		if resposta == wx.ID_YES:
 			core.delete(selectedRow.id)		
-			wx.MessageBox(_('Registro apagado !'), _('Sucesso'))
+			wx.MessageBox(_('record deleted!'), _('Success'))
 			self.show_all_records()
 
 		# Search using all the fields of the agenda.
@@ -148,27 +148,28 @@ class ContactList(wx.Dialog):
 		# Show all records in the ObjectListview's view control.
 	def onToUpdate(self, event):
 		self.show_all_records()
+
 	# Import csv file to the agenda.
 	def onToImport(self, event):
-		dlg = wx.FileDialog(self, 'Importar arquivo csv', os.getcwd(), '', '*.csv', wx.FC_OPEN)
+		dlg = wx.FileDialog(self, 'import csv file', os.getcwd(), '', '*.csv', wx.FC_OPEN)
 		if dlg.ShowModal() == wx.ID_OK:
 			try:
 				mypath = dlg.GetPath()
 				core.to_records(mypath)
 			except:
-				wx.MessageBox('Não foi pocivel inportar o arquivo!', 'Atenção')
+				wx.MessageBox('It was not possible to import the file!', 'Attention')
 		dlg.Destroy()
 		self.show_all_records()
 
-	# Exporta da agenda para csv.
+	# Export the calendar to csv.
 	def onToExport(self, event):
-		dlg = wx.FileDialog(self, 'Exportar arquivo csv', os.getcwd(), 'agenda', '*.csv', wx.FD_SAVE)
+		dlg = wx.FileDialog(self, 'export csv file', os.getcwd(), 'agenda', '*.csv', wx.FD_SAVE)
 		if dlg.ShowModal() == wx.ID_OK:
 			try:
 				mypath = dlg.GetPath()
 				core.to_csv(mypath)
 			except:
-				wx.MessageBox('Não foi pocivel exportar o arquivo!', 'Atenção')
+				wx.MessageBox('It was not possible to export the file!', 'Attention')
 		dlg.Destroy()
 		self.show_all_records()
 
@@ -177,14 +178,14 @@ class ContactList(wx.Dialog):
 		selectedRow = core.count_records()
 		if selectedRow == 0:
 			# Translators: Dialog when there is no row selected in the ObjectListView.
-			wx.MessageBox('A agenda está vasia!', 'Atenção')
+			wx.MessageBox('The agenda is empty!', 'Attention')
 			return
-		dlg = wx.MessageDialog(None, 'Essa operação  apaga todos os registros da agenda, deseja continuar!', 'Atenção',
+		dlg = wx.MessageDialog(None, 'This operation erases all records from the phone book., do you wish to continue?', 'Attention',
 		wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION)
 		resposta = dlg.ShowModal()
 		if resposta == wx.ID_YES:
 			core.reset_record()
-			wx.MessageBox('Agenda apagada!', 'Sucesso')
+			wx.MessageBox('agenda deleted!', 'Success')
 		self.show_all_records()
 
 	# Check and apply settings.

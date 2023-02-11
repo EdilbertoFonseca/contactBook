@@ -1,105 +1,106 @@
-﻿# Address book for NVDA #
+﻿# Agenda de Contatos para o NVDA #
 
-## Introduction
+## Introdução
 
-Welcome to the NVDA Address Book Addon! This is a plugin specially designed to help visually impaired people manage their contact list more easily and efficiently. With our Addon you can add, edit and delete contacts as well as search for names and contact information quickly and simply. In addition, we also provide you with the ability to export and import your contact list, so that you can share it or migrate it to another device. NVDA's Address Book Addon is easy to use and offers an intuitive interface, making it an ideal choice for anyone needing to manage their contact list efficiently.
+Bem-vindo ao complemento da Agenda de Contatos do NVDA! Este é um plug-in especialmente desenvolvido para ajudar pessoas com deficiência visual a gerenciar sua lista de contatos com mais facilidade e eficiência. Com nosso Addon você pode adicionar, editar e excluir contatos, bem como pesquisar nomes e informações de contato de forma rápida e simples. Além disso, também oferecemos a possibilidade de exportar e importar sua lista de contatos, para que você possa compartilhá-la ou migrá-la para outro dispositivo. O Address Book Addon do NVDA é fácil de usar e oferece uma interface intuitiva, tornando-o a escolha ideal para quem precisa gerenciar sua lista de contatos com eficiência.
 
-## Installation
+## Instalação
 
-Here are step-by-step instructions for installing the Address Book Add-on in NVDA:
+Aqui estão as instruções passo a passo para instalar o Add-on Address Book no NVDA:
 
-1. Download the Add-on installation file [Contact Book](https://github.com/EdilbertoFonseca/contactBook).
-2. Press enter on the add-on you downloaded.
-3. Follow the on-screen instructions to install the Add-on.
-4. Restart NVDA.
-5. Press "NVDA + N" to open the settings menu and check if the Address Book Add-on is listed in the plugins list.
-You are now ready to use the Address Book Add-on and save your contacts directly from NVDA. Be sure to check out the Add-on's documentation for additional information on how to use it and customize it to your needs.
+1. Baixe o arquivo de instalação do Add-on [Contact Book](https://github.com/EdilbertoFonseca/contactBook).
+2. Pressione enter no arquivo de complemento que você baixou.
+3. Siga as instruções na tela para instalar o complemento.
+4. Reinicie o NVDA.
+5. Pressione "NVDA + N" para abrir o menu de configurações e verifique se o Add-on Agenda de Contato para o NVDA está listado na lista de plugins.
+Agora você está pronto para usar o Add-on Agenda de contatos para o NVDA e salvar seus contatos diretamente do NVDA. Certifique-se de verificar a documentação do complemento para obter informações adicionais sobre como usá-lo e personalizá-lo de acordo com suas necessidades.
 
-## Settings
+## Configurações
 
-In the Preferences menu, Settings... of NVDA in the Contact directory option for NVDA. You can configure the following options, which are unchecked by default:
+No menu Preferências, Configurações... do NVDA na opção Agenda de Contatos para o NVDA. Você pode configurar as seguintes opções, que estão desmarcadas por padrão:
 
-1. Do not use phone formatting, checkbox not checked. Alt+n.
-This option adds or removes phone number formatting. for the time being, only formatting (+55) for Brazil is available.
-2. Display the option to delete all phonebook, unmarked checkbox. Alt+e.
-when enabled, it allows deleting all contents of the agenda.
-3. Display button Import CSV file, checkbox not checked. Alt+e.
-Allows import of csv files. Note: all fields must be compatible with the agenda.
-4. Display button Export CSV file, checkbox not checked. Alt+e.
-Saves all phonebook contacts in a csv file.
+1. Não usar formatação de telefone, caixa de seleção desmarcada. Alt+n.
+Esta opção adiciona ou remove a formatação do número de telefone. por enquanto, apenas a formatação (+55) para o Brasil está disponível.
+2. Exibir a opção de excluir toda a agenda, caixa de seleção desmarcada. Alt+e.
+quando habilitada, permite deletar todo o conteúdo da agenda.
+3. Exibir Importar arquivo CSV, caixa de seleção desmarcada. Alt+e.
+Permite a importação de arquivos csv. Obs: todos os campos devem ser compatíveis com a agenda de contatos.
+4. Exibir Exportar arquivo CSV, caixa de seleção desmarcada. Alt+e.
+Salva todos os contatos da agenda em um arquivo csv.
 
-## Usage
+## Uso
 
-You can call up the Address Book in two ways:
+Você pode acessar a Agenda de Contatos para o NVDA de duas maneiras:
 
-1. By shortcut, Windows+Alt+L;
-2. Through NVDA's menu Tools Contact Book.
+1. Pelo atalho, Windows+Alt+L;
+2. Através do menu do NVDA (NVDA+N) ferramentas Agenda de Contatos.
 
-you will have access to the main window of the addon. In this window you can register, edit, remove and search contacts. It also has the options to import csv, export csv and delete the entire agenda. These three options are disabled by default.
+você terá acesso à janela principal do addon. Nesta janela você pode registrar, editar, remover e pesquisar contatos. Ele também tem as opções de importar csv, exportar csv e excluir toda a agenda. Essas três opções estão desativadas por padrão.
 
-### Registering a new contact ###
+### Cadastrando um novo contato ###
 
-To register a new contact:
+Para registrar um novo contato:
 
-1. Access Contact Directory, NVDA menu, Tools, Directory, Contact List. or by shortcut (windows+Alt+L);
-2. In the Contact List window, press Alt+N to add a new contact.
-3. In the New Contact window, fill in all fields and press Alt+LT+E,, to save and Alt+F to exit without saving;
+1. Acesse a Agenda de Contatos, menu do NVDA, Ferramentas, Agenda, Lista de Contatos. ou por atalho (windows+Alt+L);
+2. Na janela Lista de contatos, pressione Alt+N para adicionar um novo contato.
+3. Na janela Novo Contato, preencha todos os campos e pressione Alt+E,, para salvar e Alt+F para sair sem salvar;
 
-### Editing a contact
+### Editando um contato
 
-To edit a contact:
+Para editar um contato:
 
-1. Select a contact from the list;
-2. Press ALT+E;
+1. Selecione um contato da lista;
+2. Pressione ALT+E;
 
-The editing window will open with focus on the name field. Just edit and press ALT+E to save changes or ALT+F to cancel.
+A janela de edição será aberta com foco no campo do nome. Basta editar e pressionar ALT+E para salvar as alterações ou ALT+F para cancelar.
 
-### Search
+### Pesquisar 
 
-In the Contact List window you can use the search field to find a particular contact.
-You can search by fields:
+Na janela Lista de contatos, você pode usar o campo de pesquisa para localizar um contato específico.
+Você pode pesquisar pelos campos:
 
-* Name;
-* Cell phone;
-* Landline;
-* Email.
+* Nome;
+* Celular;
+* Telefone Fixo;
+* E-mail.
 
-After selecting the field, just inform the search item, and press the ALT+B shortcut, which will display the search result in the list. If nothing is returned, just update using the shortcut ALT+A.
+Após selecionar o campo, basta informar o item de busca, e pressionar o atalho ALT+B, que exibirá o resultado da busca na lista. Se nada for retornado, basta atualizar usando o atalho ALT+A.
 
-## Tips and Shortcuts
+## Dicas e Atalhos
 
-Contact List window:
+### Janela Lista de contatos:
 
-* Search Alt+b button
-* Edit Alt+e button
-* New Alt+n button
-* Remove Alt+r button
-* Refresh button Alt+a
-* Import csv... Alt+x button
-* Export csv... Alt+x button
-* Delete all records. Alt+t button
-* Exit button Alt+s
-New Contact Window:
+* Botão Buscar Alt+B
+* Botão Editar Alt+e
+* Novo botão Alt+n
+* Remover botão Alt+r
+* Botão Atualizar Alt+a
+* Importar csv... Botão Alt+I
+* Exportar csv... Botão Alt+x
+* Excluir todos os registros. botão Alt+t
+* Botão Sair Alt+s
 
-* Add contact Alt+a button
-* Close button Alt+f
+### Janela novo contato:
 
-Edit Window:
+* Adicionar contato botão Alt+a
+* Botão Fechar Alt+f
 
-* Edit contact Alt+e button
- * Close button Alt+f
+### Janela de edição:
 
-All windows of the Contact Agenda add-on are closed with the escape key.
+* Editar contato Botão Alt+e
+* Botão Fechar Alt+f
 
-## Known issues
+Todas as janelas do complemento Agenda de Contatos para o NVDA são fechadas com a tecla Esc.
 
-When performing a search and the search item is not found, NVDA does not announce the message ('No record was found!')) that appears in the display list.
+## Problemas conhecidos
 
-## License
+Ao realizar uma pesquisa e o item de pesquisa não for encontrado, o NVDA não anuncia a mensagem ('Nenhum registro foi encontrado!') que aparece na lista de exibição.
 
-This file is covered by the GNU General Public License.
-See the file [COPYING ](https://github.com/EdilbertoFonseca/contactBook/blob/master/COPYING.txt) for more details.
+## Licença
 
-## Thanks
+Este arquivo é coberto pela GNU General Public License.
+Veja o arquivo [COPYING](https://github.com/EdilbertoFonseca/contactBook/blob/master/COPYING.txt) para maiores detalhes.
 
-This add-on was inspired by the agenda created by Abel Passos do Nascimento Jr. <abel.passos@gmail.com>, Rui Fontes <rui.fontes@tiflotecnia.com> and Ângelo Abrantes <ampa4374@gmail.com>.
+## Agradecimentos
+
+Este addon foi inspirado na agenda criada por Abel Passos do Nascimento Jr. <abel.passos@gmail.com>, Rui Fontes <rui.fontes@tiflotecnia.com> e Ângelo Abrantes <ampa4374@gmail.com>.

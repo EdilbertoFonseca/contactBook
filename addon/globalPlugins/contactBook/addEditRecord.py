@@ -19,11 +19,11 @@ addonHandler.initTranslation()
 class AddEditRecDialog(wx.Dialog):
 
 
-	def __init__(self, parent, row=None, title=_('Adicionar'), addRecord=True):
+	def __init__(self, parent, row=None, title=_('Add'), addRecord=True):
 		# Dialog window title.
 		self.title = title
 
-		wx.Dialog.__init__(self, parent, title=_('{} Registro').format(title))
+		wx.Dialog.__init__(self, parent, title=_('{} Record').format(title))
 		# Check and apply settings.
 		if config.conf["contactBook"]["formatPhone"] == False:
 			self.formatCell = '(##) #####-####'
@@ -47,28 +47,28 @@ class AddEditRecDialog(wx.Dialog):
 
 		# Creating the widgets.
 		self.panel = wx.Panel(self)
-		self.labelMSG = wx.StaticText(self.panel, label=_('Novo registro'))
+		self.labelMSG = wx.StaticText(self.panel, label=_('new record'))
 		self.labelMSG.SetFont(font)
 
 		font = wx.Font(10, wx.SWISS, wx.NORMAL, wx.BOLD) 
-		labelName = wx.StaticText(self.panel, label=_('Nome: '), size=size)
+		labelName = wx.StaticText(self.panel, label=_('Name: '), size=size)
 		labelName.SetFont(font)
 		self.textName = wx.TextCtrl(self.panel, value=name)
 
-		labelCell = wx.StaticText(self.panel, label=_('Celular: '), size=size)
+		labelCell = wx.StaticText(self.panel, label=_('Cell phone: '), size=size)
 		labelCell.SetFont(font)
 		self.textCell = TextCtrl(self.panel, value=cell, mask=self.formatCell)
 
-		labelLandline  = wx.StaticText(self.panel, label=_('Telefone fixo:'), size=size)
+		labelLandline  = wx.StaticText(self.panel, label=_('Landline: '), size=size)
 		labelLandline .SetFont(font)
 		self.textLandline = TextCtrl(self.panel, value=landline , mask=self.formatLandline)
 
-		labelEmail = wx.StaticText(self.panel, label=_('E-mail: '), size=size)
+		labelEmail = wx.StaticText(self.panel, label=_('Email: '), size=size)
 		labelEmail.SetFont(font)
 		self.textEmail = wx.TextCtrl(self.panel, value=email)
 
-		buttonOk = wx.Button(self.panel, wx.ID_OK, label=_('&%s contato') %title)
-		buttonCancel = wx.Button(self.panel, wx.ID_CANCEL, label=_('&Fechar'))
+		buttonOk = wx.Button(self.panel, wx.ID_OK, label=_('&{} contact').format(title))
+		buttonCancel = wx.Button(self.panel, wx.ID_CANCEL, label=_('&Cancel'))
 
 		# Binding events to buttons.
 		buttonOk.Bind(wx.EVT_BUTTON, self.onRecord)
@@ -103,8 +103,8 @@ class AddEditRecDialog(wx.Dialog):
 		Email = self.textEmail.GetValue()
 		if Name == '' or Cell == '' or landline == '':
 			# Translators: Dialog displayed when one of the required fields is empty.
-			wx.MessageBox(_('Nome, celular e telefone fixo são obrigatórios!'),
-									  _('Erro'))
+			wx.MessageBox(_('Name, mobile and landline are required!'),
+									  _('Error'))
 			return
 		if '-' in Email:
 			Email = Email.replace("-", "")
@@ -121,8 +121,8 @@ class AddEditRecDialog(wx.Dialog):
 		core.add_record(data)
 
 		# Translators:  Dialog displayed upon completion.
-		wx.MessageBox(_('Contato adicionado'),
-								  _('Sucesso!'), wx.ICON_INFORMATION)
+		wx.MessageBox(_('Added contact'),
+								  _('Success!'), wx.ICON_INFORMATION)
 
 		# Clear all fields to add a new record.
 		for child in self.panel.GetChildren():
@@ -138,7 +138,7 @@ class AddEditRecDialog(wx.Dialog):
 		core.edit_record(self.selectedRow.id, contactDict)
 
 		# Translators:  Dialog displayed after editing is complete.
-		wx.MessageBox(_('Contato editado com sucesso!'), _('Sucesso'),
+		wx.MessageBox(_('Contact edited successfully!'), _('Success'),
 		wx.ICON_INFORMATION)
 		self.Destroy()
 

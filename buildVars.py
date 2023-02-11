@@ -21,11 +21,11 @@ addon_info = {
 	# Add-on summary, usually the user visible name of the addon.
 	# Translators: Summary for this add-on to be shown
 	# on installation and add-on information.
-	"addon_summary": _("Agenda de contatos para o NVDA."),
+	"addon_summary": _("Contact Book for NVDA."),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on
 	# on add-on information from add-ons manager
-	"addon_description": _("""Este add-on cria uma agenda onde podemos salvar números de telefones, e-mail de pessoas e empresas que jugamos necessários."""),
+	"addon_description": _("""This add-on creates an agenda where we can save phone numbers, e-mails of people and companies that we deem necessary."""),
 	# version
 	"addon_version": "2023.1.0",
 	# Author(s)
@@ -45,14 +45,11 @@ addon_info = {
 
 # Define the python files that are the sources of your add-on.
 # You can use glob expressions here, they will be expanded.
-
-mainPaht = os.path.join("addon", "globalPlugins", "contactBook")
+mainPath = os.path.join("addon", "globalPlugins", "contactBook")
 pythonSources = [
-	os.path.join("addon", "*.py"),
-	os.path.join(mainPaht, "*.py"),
+		os.path.join("addon", "*py"),
+		os.path.join(mainPath, "*py",)
 ]
-
-
 
 # Files that contain strings for translation. Usually your python sources
 i18nSources = pythonSources
@@ -66,7 +63,7 @@ excludedFiles = []
 # modify this variable.
 # For example:
 # set baseLanguage to "es" if your add-on is primarily written in spanish.
-baseLanguage = "pt_BR"
+baseLanguage = "en"
 
 # Markdown extensions for add-on documentation
 # Most add-ons do not require additional Markdown extensions.

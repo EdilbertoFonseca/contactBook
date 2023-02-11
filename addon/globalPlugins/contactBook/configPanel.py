@@ -36,33 +36,33 @@ class AgendaSettingsPanel(gui.SettingsPanel):
 
 		self.formatPhone = agendaHelper.addItem(
 			# Translators: Phone formatting checkbox text.
-			wx.CheckBox(self, label=_("&Não usar formatação de telefone"))
+			wx.CheckBox(self, label=_('&Do not use phone formatting'))
 		)
 		self.formatPhone.SetValue(config.conf["contactBook"]["formatPhone"])
 
 		self.resetRecords = agendaHelper.addItem(
 			# Translators: Checkbox text to display scheduler reset button..
-			wx.CheckBox(self, label=_("&Exibir a opção para apagar toda a agenda"))
+			wx.CheckBox(self, label=_('&Show option to delete entire calendar'))
 		)
 		self.resetRecords.SetValue(config.conf["contactBook"]["resetRecords"])
 
 		self.importCSV = agendaHelper.addItem(
 			# Translators: Checkbox text to display import csv files to database button.
-			wx.CheckBox(self, label=_("&Exibir o botão importar arquivo CSV"))
+			wx.CheckBox(self, label=_('&Show import CSV file button'))
 		)
 		self.importCSV.SetValue(config.conf["contactBook"]["importCSV"])
 
 
 		self.exportCSV = agendaHelper.addItem(
 			# Translators: Checkbox text to display export csv files to database button.
-			wx.CheckBox(self, label=_("&Exibir o botão exportar arquivo CSV"))
+			wx.CheckBox(self, label=_('&Show export CSV file button'))
 		)
 		self.exportCSV.SetValue(config.conf["contactBook"]["exportCSV"])
 
 	def postInit(self):
 		self.formatPhone.SetFocus()
 
-	# Salva as opções no arquivo de configuração do NVDA.
+	#Saves options to NVDA's configuration file.
 	def onSave(self):
 		config.conf["contactBook"]["formatPhone"] = self.formatPhone.GetValue()
 		config.conf["contactBook"]["resetRecords"] = self.resetRecords.GetValue()
