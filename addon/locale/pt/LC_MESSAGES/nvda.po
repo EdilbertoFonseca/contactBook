@@ -1,0 +1,358 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Book Version2023.1.0\n"
+"POT-Creation-Date: 2023-04-10 16:35-0300\n"
+"PO-Revision-Date: 2023-04-10 16:37-0300\n"
+"Last-Translator: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
+"Language-Team: Edilberto Fonseca <edilberto.fonseca@outlook.com>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: globalPlugins/contactBook\n"
+"X-Poedit-SearchPath-1: buildVars.py\n"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on to be shown
+#. on installation and add-on information.
+#: buildVars.py:24
+msgid "Contact Book for NVDA."
+msgstr "Agenda de Contatos para NVDA."
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on
+#. on add-on information from add-ons manager
+#: buildVars.py:28
+msgid ""
+"This add-on creates an agenda where we can save phone numbers, e-mails of "
+"people and companies that we deem necessary."
+msgstr ""
+"Este addon cria uma agenda onde podemos guardar números de telefone, e-mails "
+"de pessoas e empresas que jugarmos necessário."
+
+#. Translators: Lists all contacts registered in the phonebook.
+#: globalPlugins/contactBook/__init__.py:42
+msgid "&Contact list"
+msgstr "&Lista de contatos"
+
+#. Translators: Open the help page.
+#: globalPlugins/contactBook/__init__.py:47
+msgid "&Help"
+msgstr "&Ajuda"
+
+#. Translators: Menu About the add-on.
+#: globalPlugins/contactBook/__init__.py:51
+msgid "&About"
+msgstr "&Sobre"
+
+#. Translators: Creates the item in the NVDA menu.
+#: globalPlugins/contactBook/__init__.py:56
+msgid "&contact book"
+msgstr "&Agenda de contatos"
+
+#: globalPlugins/contactBook/__init__.py:58
+msgid "Displays a window with all contacts registered in the phonebook."
+msgstr "Exibe uma janela com todos os contatos cadastrados na agenda."
+
+#: globalPlugins/contactBook/__init__.py:58
+#: globalPlugins/contactBook/__init__.py:67
+#: globalPlugins/contactBook/__init__.py:93
+msgid "Contact Book"
+msgstr "Agenda de contatos"
+
+#. Tradutors: Title of contact list dialog box.
+#: globalPlugins/contactBook/__init__.py:61
+msgid "Contact list."
+msgstr "Lista de contatos."
+
+#: globalPlugins/contactBook/__init__.py:67
+msgid "About the Contact Book Add-on."
+msgstr "Sobre o complemento Agenda de contatos."
+
+#: globalPlugins/contactBook/__init__.py:70
+msgid "Summary: {}\n"
+msgstr "Sumário: {}\n"
+
+#: globalPlugins/contactBook/__init__.py:72
+msgid "Version: {}\n"
+msgstr "Versão: {}\n"
+
+#: globalPlugins/contactBook/__init__.py:74
+msgid "Description: {}\n"
+msgstr "Descrição: {}\n"
+
+#: globalPlugins/contactBook/__init__.py:76
+msgid ""
+"Autor: {}\n"
+"\n"
+msgstr ""
+"Autor: {}\n"
+"\n"
+
+#: globalPlugins/contactBook/__init__.py:78
+msgid "Minimum version of NVDA required: {}\n"
+msgstr "Versão mínima do NVDA necessária: {}\n"
+
+#: globalPlugins/contactBook/__init__.py:80
+msgid "Latest version of NVDA tested: {}"
+msgstr "Versão mais recente do NVDA testada: {}"
+
+#: globalPlugins/contactBook/__init__.py:90
+msgid "Add-on information"
+msgstr "Informações adicionais"
+
+#: globalPlugins/contactBook/__init__.py:93
+msgid "Opens the Contact Book add-on help page."
+msgstr "Abre a página de ajuda do complemento Agenda de contatos."
+
+#: globalPlugins/contactBook/addEditRecord.py:25
+msgid "Add"
+msgstr "Adicionar"
+
+#: globalPlugins/contactBook/addEditRecord.py:29
+msgid "{} Record"
+msgstr "{} Registro"
+
+#: globalPlugins/contactBook/addEditRecord.py:50
+msgid "Name: "
+msgstr "Nome: "
+
+#: globalPlugins/contactBook/addEditRecord.py:53
+msgid "Cell phone: "
+msgstr "Celular: "
+
+#: globalPlugins/contactBook/addEditRecord.py:56
+msgid "Landline: "
+msgstr "Telefone Fixo: "
+
+#: globalPlugins/contactBook/addEditRecord.py:60
+msgid "Email: "
+msgstr "E-mail: "
+
+#: globalPlugins/contactBook/addEditRecord.py:63
+msgid "&Ok"
+msgstr "&OK"
+
+#: globalPlugins/contactBook/addEditRecord.py:64
+msgid "&Cancel"
+msgstr "&Cancelar"
+
+#. Translators: Dialog displayed when one of the required fields is
+#. empty.
+#: globalPlugins/contactBook/addEditRecord.py:100
+msgid "Name, mobile and landline are required!"
+msgstr "Nome, celular e telefone fixo são obrigatórios!"
+
+#: globalPlugins/contactBook/addEditRecord.py:101
+#: globalPlugins/contactBook/contactList.py:141
+#: globalPlugins/contactBook/contactList.py:156
+msgid "Error"
+msgstr "Erro"
+
+#. Translators:  Dialog displayed upon completion.
+#: globalPlugins/contactBook/addEditRecord.py:118
+msgid "Added contact"
+msgstr "Contato adicionado"
+
+#: globalPlugins/contactBook/addEditRecord.py:119
+msgid "Success!"
+msgstr "Sucesso!"
+
+#. Translators:  Dialog displayed after editing is complete.
+#: globalPlugins/contactBook/addEditRecord.py:135
+#| msgid "&Contact list"
+msgid "Contact edited!"
+msgstr "Contato editado!"
+
+#: globalPlugins/contactBook/addEditRecord.py:135
+#: globalPlugins/contactBook/contactList.py:163
+#: globalPlugins/contactBook/contactList.py:223
+msgid "Success"
+msgstr "Sucesso"
+
+#: globalPlugins/contactBook/configPanel.py:59
+msgid "&Do not use phone formatting"
+msgstr "&Não usar formatação de telefone"
+
+#: globalPlugins/contactBook/configPanel.py:65
+msgid "&Show option to delete entire calendar"
+msgstr "&Exibir a opção para excluir o calendário inteiro"
+
+#: globalPlugins/contactBook/configPanel.py:72
+msgid "&Show import CSV file button"
+msgstr "Exibir botão para &importar arquivo CSV"
+
+#: globalPlugins/contactBook/configPanel.py:79
+msgid "&Show export CSV file button"
+msgstr "Exibir botão para &exportar arquivo CSV"
+
+#: globalPlugins/contactBook/configPanel.py:85
+msgid "Path of agenda files:"
+msgstr "Caminho dos arquivos da agenda:"
+
+#: globalPlugins/contactBook/configPanel.py:101
+msgid "&Select or add a directory"
+msgstr "&Selecionar ou adicionar um diretório"
+
+#: globalPlugins/contactBook/configPanel.py:112
+msgid "Choose where to save the agenda file"
+msgstr "Escolha onde salvar o arquivo da agenda"
+
+#: globalPlugins/contactBook/configPanel.py:113
+msgid "Database files (*.db)"
+msgstr "Arquivos de banco de dados (*.db)"
+
+#: globalPlugins/contactBook/contactList.py:47
+msgid "No records found!"
+msgstr "Nenhum registro foi encontrado!"
+
+#: globalPlugins/contactBook/contactList.py:50
+msgid "Search for: "
+msgstr "Pesquisar por: "
+
+#. List of combobox choices option.
+#: globalPlugins/contactBook/contactList.py:52
+#: globalPlugins/contactBook/contactList.py:54
+#: globalPlugins/contactBook/contactList.py:114
+msgid "Name"
+msgstr "Nome"
+
+#: globalPlugins/contactBook/contactList.py:52
+#: globalPlugins/contactBook/contactList.py:115
+msgid "Cell phone"
+msgstr "Celular"
+
+#: globalPlugins/contactBook/contactList.py:52
+#: globalPlugins/contactBook/contactList.py:116
+msgid "Landline"
+msgstr "Telefone fixo"
+
+#: globalPlugins/contactBook/contactList.py:52
+#: globalPlugins/contactBook/contactList.py:117
+msgid "Email"
+msgstr "E-mail"
+
+#: globalPlugins/contactBook/contactList.py:56
+msgid "&Search"
+msgstr "&Pesquizar"
+
+#: globalPlugins/contactBook/contactList.py:58
+msgid "&Edit"
+msgstr "&Editar"
+
+#: globalPlugins/contactBook/contactList.py:59
+msgid "&New"
+msgstr "&Novo"
+
+#: globalPlugins/contactBook/contactList.py:60
+msgid "&Remove"
+msgstr "&Remover"
+
+#: globalPlugins/contactBook/contactList.py:61
+msgid "Refres&h"
+msgstr "&Atualizar"
+
+#: globalPlugins/contactBook/contactList.py:63
+msgid "&Import csv..."
+msgstr "&Importar csv..."
+
+#: globalPlugins/contactBook/contactList.py:65
+msgid "Ex&port csv..."
+msgstr "E&xportar csv..."
+
+#: globalPlugins/contactBook/contactList.py:67
+msgid "&Delete all records."
+msgstr "Excluir &todos os registros."
+
+#: globalPlugins/contactBook/contactList.py:68
+msgid "E&xit"
+msgstr "&Sair"
+
+#. Translators: Dialog when there is no row selected in the
+#. ObjectListView.
+#: globalPlugins/contactBook/contactList.py:141
+#: globalPlugins/contactBook/contactList.py:156
+msgid "No row selected!"
+msgstr "Nenhuma linha selecionada!"
+
+#: globalPlugins/contactBook/contactList.py:144
+msgid "To edit"
+msgstr "Editar"
+
+#: globalPlugins/contactBook/contactList.py:158
+msgid "Do you want to delete the selected record?"
+msgstr "Deseja excluir o registro selecionado?"
+
+#: globalPlugins/contactBook/contactList.py:158
+#: globalPlugins/contactBook/contactList.py:190
+#: globalPlugins/contactBook/contactList.py:205
+#: globalPlugins/contactBook/contactList.py:216
+#: globalPlugins/contactBook/contactList.py:218
+msgid "Attention"
+msgstr "Atenção"
+
+#: globalPlugins/contactBook/contactList.py:163
+msgid "record deleted!"
+msgstr "registro deletado!"
+
+#: globalPlugins/contactBook/contactList.py:182
+msgid "import csv file"
+msgstr "importar arquivo csv"
+
+#: globalPlugins/contactBook/contactList.py:190
+msgid "It was not possible to import the file!"
+msgstr "Não foi possível importar o arquivo!"
+
+#: globalPlugins/contactBook/contactList.py:197
+msgid "export csv file"
+msgstr "exportar arquivo csv"
+
+#: globalPlugins/contactBook/contactList.py:205
+msgid "It was not possible to export the file!"
+msgstr "Não foi possível exportar o arquivo!"
+
+#. Translators: Dialog when there is no row selected in the
+#. ObjectListView.
+#: globalPlugins/contactBook/contactList.py:216
+msgid "The agenda is empty!"
+msgstr "A agenda está vazia!"
+
+#: globalPlugins/contactBook/contactList.py:218
+msgid ""
+"This operation erases all records from the phone book., do you wish to "
+"continue?"
+msgstr "Esta operação apaga todos os registros da agenda. Deseja continuar?"
+
+#: globalPlugins/contactBook/contactList.py:223
+#, fuzzy
+#| msgid "record deleted!"
+msgid "agenda deleted!"
+msgstr "agenda apagada!"
+
+#~ msgid "new record"
+#~ msgstr "novo registro"
+
+#~ msgid "Contact edited successfully!"
+#~ msgstr "Contato editado com sucesso!"
+
+#~ msgid "bank path"
+#~ msgstr "caminho do banco"
+
+#~ msgid "&Add"
+#~ msgstr "&Adicionar"
+
+#~ msgid "select a file"
+#~ msgstr "selecione um arquivo"
+
+#~ msgid "&{} contact"
+#~ msgstr "&{} contato"
+
+#~ msgid "Lista todos os cadastros da agenda."
+#~ msgstr "Lista todos os cadastros da agenda."
+
+#~ msgid "Agenda de contatos"
+#~ msgstr "Agenda de contatos"
