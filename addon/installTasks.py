@@ -1,4 +1,4 @@
-﻿# -*- coding: UTF-8 -*-
+# -*- coding: UTF-8 -*-
 
 # Simple contact book.
 # Author: Edilberto Fonseca.
@@ -17,9 +17,9 @@ def onInstall():
 	configFilePath = os.path.abspath(os.path.join(
 		globalVars.appArgs.configPath, "addons", "contactBook", "globalPlugins", "contactBook", "manage", "agenda.db"))
 	if os.path.isfile(configFilePath):
-		#os.remove(os.path.abspath(os.path.join(globalVars.appArgs.configPath, "addons", "agenda" + addonHandler.ADDON_PENDINGINSTALL_SUFFIX, "globalPlugins", "agenda", "agenda.db")))
+		# os.remove(os.path.abspath(os.path.join(globalVars.appArgs.configPath, "addons", "agenda" + addonHandler.ADDON_PENDINGINSTALL_SUFFIX, "globalPlugins", "agenda", "agenda.db")))
 		os.rename(configFilePath, os.path.abspath(os.path.join(globalVars.appArgs.configPath, "addons", "contactBook" +
-															   addonHandler.ADDON_PENDINGINSTALL_SUFFIX, "globalPlugins", "contactBook", "manage", "agenda.db")))
+															addonHandler.ADDON_PENDINGINSTALL_SUFFIX, "globalPlugins", "contactBook", "manage", "agenda.db")))
 
 # Set add-on uninstall tasks.
 def onUninstall():

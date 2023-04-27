@@ -1,4 +1,4 @@
-﻿# -*- coding: UTF-8 -*-
+# -*- coding: UTF-8 -*-
 
 # Control module.
 # Author: Edilberto Fonseca.
@@ -18,7 +18,9 @@ from ..lib import csv
 from .model import Section, ObjectContact
 from ..configPanel import *
 
-#. Function that retrieves all data from the datadataBase.
+# . Function that retrieves all data from the datadataBase.
+
+
 def get_all_records():
 	trans = Section()
 	trans.connection()
@@ -29,6 +31,8 @@ def get_all_records():
 	return rows
 
 # Convert results into OlvContact objects.
+
+
 def convert_results(results):
 	print()
 	rows = []
@@ -39,6 +43,8 @@ def convert_results(results):
 	return rows
 
 # Function to insert new records in the datadataBase.
+
+
 def add_record(data):
 	name = data['contacts']['name']
 	cell = data['contacts']['cell']
@@ -53,6 +59,8 @@ def add_record(data):
 
 # Search the datadataBase dataBased on the chosen filter and the keyword
 # given by the user.
+
+
 def search_records(filterChoice, keyword):
 	trans = Section()
 	trans.connection()
@@ -79,6 +87,8 @@ def search_records(filterChoice, keyword):
 	return rows
 
 # Function to update records.
+
+
 def edit_record(ID, row):
 	trans = Section()
 	trans.connection()
@@ -92,6 +102,8 @@ def edit_record(ID, row):
 	trans.disconnect()
 
 # Function to remove records.
+
+
 def delete(id):
 	trans = Section()
 	trans.connection()
@@ -109,6 +121,8 @@ def reset_record():
 	trans.disconnect()
 
 # Importing csv into the datadataBase.
+
+
 def to_records(mypath):
 	trans = Section()
 	trans.connection()
@@ -125,6 +139,8 @@ def to_records(mypath):
 	trans.disconnect()
 
 # Exporting from the agenda to a csv file.
+
+
 def to_csv(mypath):
 	# connect to the database
 	conn = sqlite3.connect(dirDatabase)
@@ -142,6 +158,8 @@ def to_csv(mypath):
 		newFile.writerows(result)
 
 # Count the total record registered in the data base.
+
+
 def count_records():
 	trans = Section()
 	trans.connection()

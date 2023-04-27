@@ -1,4 +1,4 @@
-﻿# -*- coding: UTF-8 -*-
+# -*- coding: UTF-8 -*-
 
 # Author: Edilberto Fonseca.
 # E-mail: <edilberto.fonseca@outlook.com>
@@ -20,9 +20,11 @@ from .update import *
 """
 
 # Standard Python imports.
-import os
 
 # Standard NVDA imports.
+
+# For translation
+import os
 import globalVars
 import addonHandler
 import addonHandler.addonVersionCheck
@@ -30,8 +32,6 @@ import config
 import gui
 from gui.settingsDialogs import NVDASettingsDialog, SettingsPanel
 from gui import guiHelper
-
-# For translation
 addonHandler.initTranslation()
 
 
@@ -44,7 +44,7 @@ bundle = getOurAddon()
 
 
 def initConfiguration():
-# Define the plugin specifications
+	# Define the plugin specifications
 	confspec = {
 		"formatPhone": "boolean(default=False)",
 		"resetRecords": "boolean(default=False)",

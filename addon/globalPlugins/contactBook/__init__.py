@@ -1,4 +1,4 @@
-﻿# -*- coding: UTF-8 -*-
+# -*- coding: UTF-8 -*-
 
 # Simple contact book.
 # Author: Edilberto Fonseca.
@@ -16,8 +16,12 @@ import wx
 import gui
 
 # imports from the Contact Book addon.
+from .manage.model import Section
 from .configPanel import *
 from .contactList import ContactList
+
+# Start the initDB function.
+Section.initDB()
 
 # For translation process
 addonHandler.initTranslation()

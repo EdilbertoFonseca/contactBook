@@ -1,4 +1,4 @@
-﻿# -*- coding: UTF-8 -*-
+# -*- coding: UTF-8 -*-
 
 # Calendar configuration panel.
 # Author: Edilberto Fonseca.

@@ -24,12 +24,9 @@ class ObjectContact(object):
 	def __repr__(self):
 		return ' ' % (self.name, self.cell, self.landline, self.email)
 
-
-# Import the database path.
-from ..configPanel import dirDatabase
-
-
 class Section():
+	# Import the database path.
+	from ..configPanel import dirDatabase
 	database = dirDatabase
 	connect = None
 	cursor = None
@@ -88,16 +85,14 @@ class Section():
 		else:
 			return False
 
-	# Check the existence of the database.
+# Check the existence of the database.
+	def initDB():
+		trans = Section()
+		trans.connection()
+		trans.execute(
+			"CREATE TABLE IF NOT EXISTS contacts(id INTEGER PRIMARY KEY , name TEXT, cell TEXT, landline TEXT, email TEXT)")
+		trans.persist()
+		trans.disconnect()
 
 
-def initDB():
-	trans = Section()
-	trans.connection()
-	trans.execute(
-		"CREATE TABLE IF NOT EXISTS contacts(id INTEGER PRIMARY KEY , name TEXT, cell TEXT, landline TEXT, email TEXT)")
-	trans.persist()
-	trans.disconnect()
 
-
-initDB()  # Start the initDB function.

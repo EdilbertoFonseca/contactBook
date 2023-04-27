@@ -1,4 +1,4 @@
-﻿# -*- coding: UTF-8 -*-
+# -*- coding: UTF-8 -*-
 
 # Lists all contacts registered in the phonebook.
 # Author: Edilberto Fonseca.
@@ -228,7 +228,7 @@ class ContactList(wx.Dialog):
 	def set_config(self):
 		if config.conf["contactBook"]["resetRecords"] == False:
 			self.buttonResetRecords.Disable()
-		if(config.conf["contactBook"]["importCSV"] == False) or (config.conf["contactBook"]["exportCSV"] == False):
+		if (config.conf["contactBook"]["importCSV"] == False) or (config.conf["contactBook"]["exportCSV"] == False):
 			self.buttonExport.Disable()
 			self.buttonImport.Disable()
 

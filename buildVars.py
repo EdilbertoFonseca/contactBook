@@ -32,6 +32,8 @@ addon_info = {
 	"addon_author": u"Edilberto Fonseca <edilberto.fonseca@outlook.com>",
 	# URL for the add-on documentation support
 	"addon_url": "https://github.com/EdilbertoFonseca/contactBook",
+	# URL for the add-on repository where the source code can be found
+	"addon_sourceURL": "https://github.com/EdilbertoFonseca/contactBook",
 	# Documentation file name
 	"addon_docFileName": "readme.html",
 	# Minimum NVDA version supported (e.g. "2018.3")
@@ -41,6 +43,10 @@ addon_info = {
 	"addon_lastTestedNVDAVersion": "2023.1.0",
 	# Add-on update channel (default is stable or None)
 	"addon_updateChannel": None,
+	# Add-on license such as GPL 2
+	"addon_license": None,
+	# URL for the license document the ad-on is licensed under
+	"addon_licenseURL": None,
 }
 
 # Define the python files that are the sources of your add-on.
