@@ -32,27 +32,36 @@ class ContactList(wx.Dialog):
 	def __init__(self, parent, title):
 		# Title of contact list dialog.
 		self.title = title
+		WIDTH = 900
+		HEIGHT = 450
+
 		try:
 			self.contactResults = core.get_all_records()
 		except:
 			self.contactResults = []
 
-		super(ContactList, self).__init__(parent, title=title)
+		super(ContactList, self).__init__(parent, title=title, size=(WIDTH, HEIGHT))
 
 		# Creating the screen objects.
 		panel = wx.Panel(self)
 		self.contactList = ObjectListView(
 			panel, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
 		self.contactList.SetFocus()
+
+		# Translators: Message displayed when the contactList is empty.
 		self.contactList.SetEmptyListMsg(_('No records found!'))
 		self.set_contacts()
 
+		# Translators: Search field label.
 		labelSearch = wx.StaticText(panel, label=_('Search for: '))
+
 		# List of combobox choices option.
 		listOfOptions = [_('Name'), _('Cell phone'), _('Landline'), _('Email')]
+
 		self.comboboxOptions = wx.ComboBox(
 			panel, value=_('Name'), choices=listOfOptions)
-		self.search = wx.SearchCtrl(panel, -1)
+
+		self.search = wx.SearchCtrl(panel, -1, size=(250, 25))
 		self.buttonSearch = wx.Button(panel, label=_('&Search'))
 
 		self.buttonEdit = wx.Button(panel, wx.ID_EDIT, label=_('&Edit'))
@@ -70,8 +79,8 @@ class ContactList(wx.Dialog):
 
 		# Creating the layout and adding it to the panel.
 		boxSizer = wx.BoxSizer(wx.VERTICAL)
-		viewSizer = wx.BoxSizer(wx.HORIZONTAL)
-		searchSizer = wx.BoxSizer(wx.HORIZONTAL)
+		viewSizer = wx.BoxSizer(wx.VERTICAL)
+		searchSizer = wx.BoxSizer(wx.VERTICAL)
 		buttonSizer = wx.BoxSizer(wx.HORIZONTAL)
 
 		viewSizer.Add(self.contactList, 0, wx.ALL | wx.EXPAND, 5)
@@ -91,7 +100,7 @@ class ContactList(wx.Dialog):
 		boxSizer.Add(searchSizer)
 		boxSizer.Add(viewSizer)
 		boxSizer.Add(buttonSizer, 0, wx.CENTER)
-		panel.SetSizer(boxSizer)
+		panel.SetSizerAndFit(boxSizer)
 
 		# Binding events to buttons.
 		self.buttonSearch.Bind(wx.EVT_BUTTON, self.onSearch, self.buttonSearch)
@@ -111,7 +120,7 @@ class ContactList(wx.Dialog):
 		# Creating the columns of the ObjectListView.
 	def set_contacts(self):
 		self.contactList.SetColumns([
-			ColumnDefn(_('Name'), 'left', 200, 'name'),
+			ColumnDefn(_('Name'), 'left', 300, 'name'),
 			ColumnDefn(_('Cell phone'), 'left', 200, 'cell'),
 			ColumnDefn(_('Landline'), 'left', 200, 'landline'),
 			ColumnDefn(_('Email'), 'left', 200, 'email')

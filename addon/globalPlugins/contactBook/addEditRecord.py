@@ -25,14 +25,16 @@ class AddEditRecDialog(wx.Dialog):
 	def __init__(self, parent, row=None, title=_('Add'), addRecord=True):
 		# Dialog window title.
 		self.title = title
+		WIDTH = 600
+		HEIGHT = 300
 
-		wx.Dialog.__init__(self, parent, title=_('{} Record').format(title))
+		wx.Dialog.__init__(self, parent, title=_('{} Record').format(title), size=(WIDTH, HEIGHT))
 		# Check and apply settings.
 		if config.conf["contactBook"]["formatPhone"] == False:
 			self.formatCell = '(##) #####-####'
 			self.formatLandline = '(##) ####-####'
 		else:
-			self.formatCell = ''
+			self.ormatCell = ''
 			self.formatLandline = ''
 
 		self.addRecord = addRecord
@@ -48,7 +50,7 @@ class AddEditRecDialog(wx.Dialog):
 		# Creating the widgets.
 		self.panel = wx.Panel(self)
 		labelName = wx.StaticText(self.panel, label=_('Name: '))
-		self.textName = wx.TextCtrl(self.panel, value=name)
+		self.textName = wx.TextCtrl(self.panel, -1, value=name, size=(200, 25))
 
 		labelCell = wx.StaticText(self.panel, label=_('Cell phone: '))
 		self.textCell = TextCtrl(self.panel, value=cell, mask=self.formatCell)
@@ -58,7 +60,7 @@ class AddEditRecDialog(wx.Dialog):
 			self.panel, value=landline, mask=self.formatLandline)
 
 		labelEmail = wx.StaticText(self.panel, label=_('Email: '))
-		self.textEmail = wx.TextCtrl(self.panel, value=email)
+		self.textEmail = wx.TextCtrl(self.panel, value=email, size=(200, 25))
 
 		buttonOk = wx.Button(self.panel, wx.ID_OK, label=_('&Ok'))
 		buttonCancel = wx.Button(self.panel, wx.ID_CANCEL, label=_('&Cancel'))
@@ -69,9 +71,9 @@ class AddEditRecDialog(wx.Dialog):
 
 		# Creating the screen objects.
 		mainSizer = wx.BoxSizer(wx.VERTICAL)
-		viewSizer = wx.BoxSizer(wx.HORIZONTAL)
+		viewSizer = wx.BoxSizer(wx.VERTICAL)
 		viewSizer.Add(labelName, 0, wx.ALL | wx.EXPAND, 5)
-		viewSizer.Add(self.textName, 0, wx.ALL | wx.EXPAND, 5)
+		viewSizer.Add(self.textName, 1, wx.ALL | wx.EXPAND, 5)
 		viewSizer.Add(labelCell, 0, wx.ALL | wx.EXPAND, 5)
 		viewSizer.Add(self.textCell, 0, wx.ALL | wx.EXPAND, 5)
 		viewSizer.Add(labelLandline, 0, wx.ALL | wx.EXPAND, 5)
@@ -83,9 +85,9 @@ class AddEditRecDialog(wx.Dialog):
 		buttonSizer.Add(buttonOk, 0, wx.ALL, 5)
 		buttonSizer.Add(buttonCancel, 0, wx.ALL, 5)
 
-		mainSizer.Add(viewSizer)
+		mainSizer.Add(viewSizer, wx.EXPAND)
 		mainSizer.Add(buttonSizer, 0, wx.CENTER)
-		self.panel.SetSizer(mainSizer)
+		self.panel.SetSizerAndFit(mainSizer)
 
 	def getData(self):
 		contactDict = {}

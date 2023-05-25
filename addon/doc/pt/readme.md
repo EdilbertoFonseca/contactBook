@@ -1,4 +1,4 @@
-﻿# Agenda de Contatos para o NVDA #
+# Agenda de Contatos para o NVDA #
 
 ## Introdução
 
