@@ -25,8 +25,7 @@ addonHandler.initTranslation()
 addonSumary = addonHandler.getCodeAddon().manifest["summary"]
 
 # Read configuration on INI file to know where are the agenda.db files...
-dirDatabase = os.path.abspath(os.path.join(globalVars.appArgs.configPath, "addons",
-										   "contactBook", "globalPlugins", "contactBook", "manage", "agenda.db"))
+dirDatabase = os.path.abspath(os.path.join(globalVars.appArgs.configPath, "addons", "contactBook", "globalPlugins", "contactBook", "database.db"))
 firstDatabase = ""
 altDatabase = ""
 indexDB = 0
@@ -54,35 +53,51 @@ class AgendaSettingsPanel(gui.SettingsPanel):
 		settingsSizerHelper = gui.guiHelper.BoxSizerHelper(
 			self, sizer=settingsSizer)
 
-		# Translators: Phone formatting checkbox text.
-		self.formatPhone = wx.CheckBox(
-			self, label=_('&Do not use phone formatting'))
-		self.formatPhone.SetValue(config.conf[ourAddon.name]["formatPhone"])
-		settingsSizerHelper.addItem(self.formatPhone)
+		# Translators: Formatting text for phone fields.
+		phoneFormattingBoxSizer = wx.StaticBoxSizer(wx.HORIZONTAL, self, label=_("Add mask for phone fields:"))
+		phoneFormattingBox = phoneFormattingBoxSizer.GetStaticBox()
+		phoneFormattingGroup = guiHelper.BoxSizerHelper(self, sizer = phoneFormattingBoxSizer)
+		settingsSizerHelper.addItem(phoneFormattingGroup)
 
-		# Translators: Checkbox text to display scheduler reset button..
-		self.resetRecords = wx.CheckBox(self, label=_(
-			'&Show option to delete entire calendar'))
+		# Cell field formatting.
+		labelCellPhone = wx.StaticText(phoneFormattingBox, label=_("Cell phone"))
+		self.textCellPhone = wx.TextCtrl(phoneFormattingBox, value="")
+		self.textCellPhone.SetValue(config.conf[ourAddon.name]["formatCellPhone"])
+
+		# Formatting the landline phone field.
+		labelLandline = wx.StaticText(phoneFormattingBox, label=_("Landline"))
+		self.textLandline = wx.TextCtrl(phoneFormattingBox, value="")
+		self.textLandline.SetValue(config.conf[ourAddon.name]["formatLandline"])
+
+
+		self.resetRecords = wx.CheckBox(
+			# Translators: Checkbox text to display scheduler reset button..
+			self, label=_('&Show option to delete entire calendar')
+			)
 		self.resetRecords.SetValue(config.conf[ourAddon.name]["resetRecords"])
 		settingsSizerHelper.addItem(self.resetRecords)
 
-		# Translators: Checkbox text to display import csv files to database
+
 		# button.
 		self.importCSV = wx.CheckBox(
-			self, label=_('&Show import CSV file button'))
+			# Translators: Checkbox text to display import csv files to database
+			self, label=_('&Show import CSV file button')
+			)
 		self.importCSV.SetValue(config.conf[ourAddon.name]["importCSV"])
 		settingsSizerHelper.addItem(self.importCSV)
 
-		# Translators: Checkbox text to display export csv files to database
 		# button.
 		self.exportCSV = wx.CheckBox(
-			self, label=_('&Show export CSV file button'))
+			# Translators: Checkbox text to display export csv files to database
+			self, label=_('&Show export CSV file button')
+			)
 		self.exportCSV.SetValue(config.conf[ourAddon.name]["exportCSV"])
 		settingsSizerHelper.addItem(self.exportCSV)
 
-		# Translators: Name of combobox with the agenda files path
 		pathBoxSizer = wx.StaticBoxSizer(
-			wx.HORIZONTAL, self, label=_("Path of agenda files:"))
+			# Translators: Name of combobox with the agenda files path
+			wx.HORIZONTAL, self, label=_("Path of agenda files:")
+		)
 		pathBox = pathBoxSizer.GetStaticBox()
 		pathGroup = guiHelper.BoxSizerHelper(self, sizer=pathBoxSizer)
 		settingsSizerHelper.addItem(pathGroup)
@@ -106,7 +121,7 @@ class AgendaSettingsPanel(gui.SettingsPanel):
 		global dirDatabase, firstDatabase, altDatabase, indexDB
 		lastDir = os.path.dirname(__file__)
 		dDir = lastDir
-		dFile = "agenda.db"
+		dFile = "database.db"
 		frame = wx.Frame(None, -1, 'teste')
 		frame.SetSize(0, 0, 200, 50)
 		dlg = wx.FileDialog(frame, _("Choose where to save the agenda file"), dDir, dFile,
@@ -141,7 +156,8 @@ class AgendaSettingsPanel(gui.SettingsPanel):
 	# Saves options to NVDA's configuration file.
 	def onSave(self):
 		global dirDatabase, indexDB
-		config.conf[ourAddon.name]["formatPhone"] = self.formatPhone.GetValue()
+		config.conf[ourAddon.name]["formatCellPhone"] = self.textCellPhone.GetValue()
+		config.conf[ourAddon.name]["formatLandline"] = self.textLandline.GetValue()
 		config.conf[ourAddon.name]["resetRecords"] = self.resetRecords.GetValue()
 		config.conf[ourAddon.name]["importCSV"] = self.importCSV.GetValue()
 		config.conf[ourAddon.name]["exportCSV"] = self.exportCSV.GetValue()

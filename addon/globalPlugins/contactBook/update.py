@@ -22,8 +22,6 @@ from .update import *
 # Standard Python imports.
 
 # Standard NVDA imports.
-
-# For translation
 import os
 import globalVars
 import addonHandler
@@ -32,6 +30,8 @@ import config
 import gui
 from gui.settingsDialogs import NVDASettingsDialog, SettingsPanel
 from gui import guiHelper
+
+# For translation
 addonHandler.initTranslation()
 
 
@@ -46,10 +46,11 @@ bundle = getOurAddon()
 def initConfiguration():
 	# Define the plugin specifications
 	confspec = {
-		"formatPhone": "boolean(default=False)",
-		"resetRecords": "boolean(default=False)",
-		"importCSV": "boolean(default=False)",
-		"exportCSV": "boolean(default=False)",
+		"formatCellPhone": """string(default="(##) #####-####")""",
+		"formatLandline": """string(default="(##) ####-####")""",
+		"resetRecords": "boolean(default=True)",
+		"importCSV": "boolean(default=True)",
+		"exportCSV": "boolean(default=True)",
 		"path": "string(default="")",
 		"altPath ": "string(default="")",
 		"xx": "string(default="")",

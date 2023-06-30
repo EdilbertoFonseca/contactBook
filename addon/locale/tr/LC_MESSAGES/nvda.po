@@ -1,0 +1,374 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Adres Defteri 2023.1.0\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2023-06-27 10:34-0300\n"
+"PO-Revision-Date: 2023-06-30 15:39-0300\n"
+"Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
+"Language-Team: Umut KORKMAZ <umutkork@gmail.com>\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: globalPlugins/contactBook\n"
+"X-Poedit-SearchPath-1: buildVars.py\n"
+
+#. Translators: Lists all contacts registered in the phonebook.
+#: addon\globalPlugins\contactBook\__init__.py:56
+msgid "&Contact list"
+msgstr "&Kişi listesi"
+
+#. Translators: Open the help page.
+#: addon\globalPlugins\contactBook\__init__.py:61
+msgid "&Help"
+msgstr "&Yardım"
+
+#. Translators: Creates the item in the NVDA menu.
+#: addon\globalPlugins\contactBook\__init__.py:65
+msgid "&contact book"
+msgstr "&kişi defteri"
+
+#. Translators: Title of contact list dialog box.
+#: addon\globalPlugins\contactBook\__init__.py:69
+msgid "Contact list."
+msgstr "Kişi listesi."
+
+#. Translators: Text displayed in NVDA help.
+#: addon\globalPlugins\contactBook\__init__.py:80
+msgid "Displays a window with all contacts registered in the phonebook."
+msgstr ""
+"Telefon rehberinde kayıtlı tüm kişilerin bulunduğu bir pencere görüntüler."
+
+#. Translators: Text displayed in NVDA help.
+#: addon\globalPlugins\contactBook\__init__.py:91
+msgid "Opens the Contact Book add-on help page."
+msgstr "Kişi Defteri eklentisi yardım sayfasını açar."
+
+#: addon\globalPlugins\contactBook\addEditRecord.py:32
+msgid "Add"
+msgstr "Ekle"
+
+#: addon\globalPlugins\contactBook\addEditRecord.py:38
+msgid "{} Record"
+msgstr "{} Kayıt"
+
+#: addon\globalPlugins\contactBook\addEditRecord.py:55
+msgid "Name: "
+msgstr "Ad: "
+
+#: addon\globalPlugins\contactBook\addEditRecord.py:58
+msgid "Cell phone: "
+msgstr "Cep telefonu: "
+
+#: addon\globalPlugins\contactBook\addEditRecord.py:61
+msgid "Landline: "
+msgstr "Sabit hat: "
+
+#: addon\globalPlugins\contactBook\addEditRecord.py:65
+msgid "Email: "
+msgstr "E-posta: "
+
+#: addon\globalPlugins\contactBook\addEditRecord.py:68
+msgid "&Ok"
+msgstr "&Tamam"
+
+#: addon\globalPlugins\contactBook\addEditRecord.py:69
+msgid "&Cancel"
+msgstr "İpta&l"
+
+#. Translators: Dialog displayed when one of the required fields is
+#. empty.
+#: addon\globalPlugins\contactBook\addEditRecord.py:105
+msgid "Name, mobile and landline are required!"
+msgstr "Ad, cep telefonu ve sabit hat gereklidir!"
+
+#: addon\globalPlugins\contactBook\addEditRecord.py:106
+#: addon\globalPlugins\contactBook\main.py:168
+#: addon\globalPlugins\contactBook\main.py:183
+msgid "Error"
+msgstr "Hata"
+
+#. Translators:  Dialog displayed upon completion.
+#: addon\globalPlugins\contactBook\addEditRecord.py:123
+msgid "Added contact"
+msgstr "Kişi eklendi"
+
+#: addon\globalPlugins\contactBook\addEditRecord.py:124
+msgid "Success!"
+msgstr "Başarılı!"
+
+#. Translators:  Dialog displayed after editing is complete.
+#: addon\globalPlugins\contactBook\addEditRecord.py:140
+msgid "Contact edited!"
+msgstr "Kişi düzenlendi!"
+
+#: addon\globalPlugins\contactBook\addEditRecord.py:140
+#: addon\globalPlugins\contactBook\main.py:190
+#: addon\globalPlugins\contactBook\main.py:262
+msgid "Success"
+msgstr "Başarılı"
+
+#. Translators: Formatting text for phone fields.
+#: addon\globalPlugins\contactBook\configPanel.py:57
+msgid "Add mask for phone fields:"
+msgstr "Telefon alanları için maske ekleyin:"
+
+#. Cell field formatting.
+#: addon\globalPlugins\contactBook\configPanel.py:63
+#: addon\globalPlugins\contactBook\main.py:76
+#: addon\globalPlugins\contactBook\main.py:142
+msgid "Cell phone"
+msgstr "Cep telefonu"
+
+#. Formatting the landline phone field.
+#: addon\globalPlugins\contactBook\configPanel.py:68
+#: addon\globalPlugins\contactBook\main.py:76
+#: addon\globalPlugins\contactBook\main.py:143
+msgid "Landline"
+msgstr "Sabit hat"
+
+#. Translators: Checkbox text to display scheduler reset button..
+#: addon\globalPlugins\contactBook\configPanel.py:75
+msgid "&Show option to delete entire calendar"
+msgstr "Tüm &rehberi silme seçeneğini göster"
+
+#. Translators: Checkbox text to display import csv files to database
+#: addon\globalPlugins\contactBook\configPanel.py:84
+msgid "&Show import CSV file button"
+msgstr "&CSV dosyasını içe aktar düğmesini göster"
+
+#. Translators: Checkbox text to display export csv files to database
+#: addon\globalPlugins\contactBook\configPanel.py:92
+msgid "&Show export CSV file button"
+msgstr "&CSV dosyasını dışa aktar düğmesini göster"
+
+#. Translators: Name of combobox with the agenda files path
+#: addon\globalPlugins\contactBook\configPanel.py:99
+msgid "Path of agenda files:"
+msgstr "Ajanda dosyalarının saklandığı konum:"
+
+#: addon\globalPlugins\contactBook\configPanel.py:116
+msgid "&Select or add a directory"
+msgstr "&Bir dizin seç veya ekle"
+
+#: addon\globalPlugins\contactBook\configPanel.py:127
+msgid "Choose where to save the agenda file"
+msgstr "Ajanda dosyasının nereye kaydedileceğini seçin"
+
+#: addon\globalPlugins\contactBook\configPanel.py:128
+msgid "Database files (*.db)"
+msgstr "Veritabanı dosyaları (*.db)"
+
+#. Translators: Message displayed when the contactList is empty.
+#: addon\globalPlugins\contactBook\main.py:69
+msgid "No records found!"
+msgstr "Kayıt bulunamadı!"
+
+#. Translators: Search field label.
+#: addon\globalPlugins\contactBook\main.py:73
+msgid "Search for: "
+msgstr "Arama türü: "
+
+#. List of combobox choices option.
+#: addon\globalPlugins\contactBook\main.py:76
+#: addon\globalPlugins\contactBook\main.py:79
+#: addon\globalPlugins\contactBook\main.py:141
+msgid "Name"
+msgstr "Ad"
+
+#: addon\globalPlugins\contactBook\main.py:76
+#: addon\globalPlugins\contactBook\main.py:144
+msgid "Email"
+msgstr "E-posta"
+
+#: addon\globalPlugins\contactBook\main.py:82
+msgid "&Search"
+msgstr "&Ara"
+
+#: addon\globalPlugins\contactBook\main.py:84
+msgid "&Edit"
+msgstr "Düz&enle"
+
+#: addon\globalPlugins\contactBook\main.py:85
+msgid "&New"
+msgstr "Ye&ni"
+
+#: addon\globalPlugins\contactBook\main.py:86
+msgid "&Remove"
+msgstr "Kaldı&r"
+
+#: addon\globalPlugins\contactBook\main.py:87
+msgid "Refres&h"
+msgstr "&Yenile"
+
+#: addon\globalPlugins\contactBook\main.py:89
+msgid "&Import csv..."
+msgstr "CSV dosyasını &içe aktar..."
+
+#: addon\globalPlugins\contactBook\main.py:91
+msgid "Ex&port csv..."
+msgstr "CSV olarak d&ışa aktar..."
+
+#: addon\globalPlugins\contactBook\main.py:93
+msgid "&Delete all records."
+msgstr "Tüm kayıtları &sil."
+
+#: addon\globalPlugins\contactBook\main.py:94
+msgid "E&xit"
+msgstr "&Çık"
+
+#. Translators: Dialog when there is no row selected in the
+#. ObjectListView.
+#: addon\globalPlugins\contactBook\main.py:168
+#: addon\globalPlugins\contactBook\main.py:183
+#, fuzzy
+#| msgid "No row selected!"
+msgid "No records selected!"
+msgstr "Satır seçilmedi!"
+
+#: addon\globalPlugins\contactBook\main.py:171
+msgid "To edit"
+msgstr "Düzenlemek için"
+
+#: addon\globalPlugins\contactBook\main.py:185
+msgid "Do you want to delete the selected record?"
+msgstr "Seçilen kaydı silmek istiyor musunuz?"
+
+#. Translators: Message displayed to the user in case of errors when importing the CSV file
+#. Translators: Message displayed to the user in case of errors when exporting the CSV file
+#: addon\globalPlugins\contactBook\main.py:185
+#: addon\globalPlugins\contactBook\main.py:223
+#: addon\globalPlugins\contactBook\main.py:244
+#: addon\globalPlugins\contactBook\main.py:255
+#: addon\globalPlugins\contactBook\main.py:257
+msgid "Attention"
+msgstr "Dikkat"
+
+#: addon\globalPlugins\contactBook\main.py:190
+msgid "record deleted!"
+msgstr "kayıt silindi!"
+
+#: addon\globalPlugins\contactBook\main.py:209
+msgid "import csv file"
+msgstr "csv dosyasını içe aktar"
+
+#: addon\globalPlugins\contactBook\main.py:218
+#, python-format
+#| msgid "It was not possible to import the file!"
+msgid ""
+"It was not possible to import the file!\n"
+"\n"
+"%s"
+msgstr ""
+"Dosya içe aktarılamadı!\n"
+"\n"
+"%s"
+
+#: addon\globalPlugins\contactBook\main.py:230
+msgid "export csv file"
+msgstr "csv dosyasını dışa aktar"
+
+#: addon\globalPlugins\contactBook\main.py:239
+#, python-format
+#| msgid "It was not possible to export the file!"
+msgid ""
+"It was not possible to export the file!\n"
+"\n"
+"%s"
+msgstr ""
+"Dosya dışa aktarılamadı!\n"
+"\n"
+"%s"
+
+#. Translators: Dialog when there is no row selected in the
+#. ObjectListView.
+#: addon\globalPlugins\contactBook\main.py:255
+msgid "The agenda is empty!"
+msgstr "Ajanda boş!"
+
+#: addon\globalPlugins\contactBook\main.py:257
+msgid ""
+"This operation erases all records from the phone book., do you wish to "
+"continue?"
+msgstr ""
+"Bu işlem telefon defterindeki tüm kayıtları siler., devam etmek istiyor "
+"musunuz?"
+
+#: addon\globalPlugins\contactBook\main.py:262
+msgid "agenda deleted!"
+msgstr "ajanda silindi!"
+
+#~ msgid "Contact Book for NVDA."
+#~ msgstr "NVDA için Kişi Defteri."
+
+#~ msgid ""
+#~ "This add-on creates an agenda where we can save phone numbers, e-mails of "
+#~ "people and companies that we deem necessary."
+#~ msgstr ""
+#~ "Bu eklenti gerekli gördüğümüz kişi ve firmaların telefon numaralarını, e-"
+#~ "postalarını kaydedebileceğimiz bir ajanda oluşturur."
+
+#~ msgid "&About"
+#~ msgstr "&Hakkında"
+
+#~ msgid "Contact Book"
+#~ msgstr "Kişi defteri"
+
+#~ msgid "About the Contact Book Add-on."
+#~ msgstr "Kişi Defteri Eklentisi hakkında."
+
+#~ msgid "Summary: {}\n"
+#~ msgstr "Özet: {}\n"
+
+#~ msgid "Version: {}\n"
+#~ msgstr "Sürüm: {}\n"
+
+#~ msgid "Description: {}\n"
+#~ msgstr "Tanım: {}\n"
+
+#~ msgid ""
+#~ "Autor: {}\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Yazar: {}\n"
+#~ "\n"
+
+#~ msgid "Minimum version of NVDA required: {}\n"
+#~ msgstr "Gerekli minimum NVDA sürümü: {}\n"
+
+#~ msgid "Latest version of NVDA tested: {}"
+#~ msgstr "Test edilen en son NVDA sürümü: {}"
+
+#~ msgid "Add-on information"
+#~ msgstr "Eklenti bilgileri"
+
+#~ msgid "&Do not use phone formatting"
+#~ msgstr "&Telefon biçimlendirmesini kullanma"
+
+#~ msgid "new record"
+#~ msgstr "novo registro"
+
+#~ msgid "Contact edited successfully!"
+#~ msgstr "Contato editado com sucesso!"
+
+#~ msgid "bank path"
+#~ msgstr "caminho do banco"
+
+#~ msgid "&Add"
+#~ msgstr "&Adicionar"
+
+#~ msgid "select a file"
+#~ msgstr "selecione um arquivo"
+
+#~ msgid "&{} contact"
+#~ msgstr "&{} contato"
+
+#~ msgid "Lista todos os cadastros da agenda."
+#~ msgstr "Lista todos os cadastros da agenda."
+
+#~ msgid "Agenda de contatos"
+#~ msgstr "Agenda de contatos"

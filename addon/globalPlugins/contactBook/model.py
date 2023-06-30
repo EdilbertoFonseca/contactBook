@@ -5,8 +5,13 @@
 # E-mail: <edilberto.fonseca@outlook.com>
 # Creation date: 30/11/2022.
 
-# Importing non-standard python modules from NVDA.
-from ..lib import sqlite3 as sql
+# Non-standard Python imports from NVDA.
+import os
+import sys
+baseDir = os.path.dirname(__file__)
+libs = os.path.join(baseDir, "lib")
+sys.path.append(libs)
+import sqlite3 as sql
 
 dirDatabase = ""
 
@@ -26,7 +31,7 @@ class ObjectContact(object):
 
 class Section():
 	# Import the database path.
-	from ..configPanel import dirDatabase
+	from .configPanel import dirDatabase
 	database = dirDatabase
 	connect = None
 	cursor = None
@@ -93,6 +98,3 @@ class Section():
 			"CREATE TABLE IF NOT EXISTS contacts(id INTEGER PRIMARY KEY , name TEXT, cell TEXT, landline TEXT, email TEXT)")
 		trans.persist()
 		trans.disconnect()
-
-
-

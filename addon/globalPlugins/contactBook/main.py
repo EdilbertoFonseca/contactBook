@@ -2,36 +2,52 @@
 
 # Lists all contacts registered in the phonebook.
 # Author: Edilberto Fonseca.
-# E-mail: <edilberto.fonseca@outlook.com>
+# Email: <edilberto.fonseca@outlook.com>
 # Creation date: 30/11/2022.
 
 # Standard Python imports.
 import os
+import sys
 
 # Standard NVDA imports.
 import addonHandler
 import gui
-import ui
+from gui import guiHelper
 import config
 import wx
 
 # non-standard Python imports from NVDA.
-from .lib import csv
-from .lib.ObjectListView import ObjectListView, ColumnDefn
+baseDir = os.path.dirname(__file__)
+libs = os.path.join(baseDir, "lib")
+sys.path.append(libs)
+from ObjectListView import ObjectListView, ColumnDefn
+import csv
 
 # imports from the Contact Book addon.
 from .addEditRecord import AddEditRecDialog
-from .manage import controller as core
+from . import controller as core
 
 # For translation process
 addonHandler.initTranslation()
 
 
 class ContactList(wx.Dialog):
+	_instance = None
+
+	def __new__(cls, *args, **kwargs):
+		if not cls._instance:
+			cls._instance = super(ContactList, cls).__new__(
+				cls, *args, **kwargs)
+		return cls._instance
 
 	def __init__(self, parent, title):
+		if hasattr(self, "initialized"):
+			return
+		self.initialized = True
+
 		# Title of contact list dialog.
 		self.title = title
+
 		WIDTH = 900
 		HEIGHT = 450
 
@@ -40,7 +56,8 @@ class ContactList(wx.Dialog):
 		except:
 			self.contactResults = []
 
-		super(ContactList, self).__init__(parent, title=title, size=(WIDTH, HEIGHT))
+		super(ContactList, self).__init__(
+			parent, title=title, size=(WIDTH, HEIGHT))
 
 		# Creating the screen objects.
 		panel = wx.Panel(self)
@@ -97,8 +114,9 @@ class ContactList(wx.Dialog):
 		buttonSizer.Add(self.buttonResetRecords, 0, wx.ALL | wx.EXPAND, 5)
 		buttonSizer.Add(self.buttonExit, 0, wx.ALL | wx.EXPAND, 5)
 
-		boxSizer.Add(searchSizer)
-		boxSizer.Add(viewSizer)
+		# Define the main layout of the window
+		boxSizer.Add(searchSizer, wx.ALL, guiHelper.BORDER_FOR_DIALOGS)
+		boxSizer.Add(viewSizer, wx.ALL, guiHelper.BORDER_FOR_DIALOGS)
 		boxSizer.Add(buttonSizer, 0, wx.CENTER)
 		panel.SetSizerAndFit(boxSizer)
 
@@ -147,7 +165,7 @@ class ContactList(wx.Dialog):
 		if selectedRow == None:
 			# Translators: Dialog when there is no row selected in the
 			# ObjectListView.
-			wx.MessageBox(_('No row selected!'), _('Error'))
+			gui.messageBox(_('No records selected!'), _('Error'))
 			return
 		dlg = AddEditRecDialog(gui.mainFrame, selectedRow,
 							   title=_('To edit'), addRecord=False)
@@ -162,14 +180,14 @@ class ContactList(wx.Dialog):
 		if selectedRow == None:
 			# Translators: Dialog when there is no row selected in the
 			# ObjectListView.
-			wx.MessageBox(_('No row selected!'), _('Error'))
+			gui.messageBox(_('No records selected!'), _('Error'))
 			return
 		dlg = wx.MessageDialog(None, _('Do you want to delete the selected record?'), _('Attention'),
 							   wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION)
 		resposta = dlg.ShowModal()
 		if resposta == wx.ID_YES:
 			core.delete(selectedRow.id)
-			wx.MessageBox(_('record deleted!'), _('Success'))
+			gui.messageBox(_('record deleted!'), _('Success'))
 			self.show_all_records()
 		self.contactList.SetFocus()
 
@@ -194,9 +212,15 @@ class ContactList(wx.Dialog):
 			try:
 				mypath = dlg.GetPath()
 				core.to_records(mypath)
-			except:
-				wx.MessageBox(
-					_('It was not possible to import the file!'), _('Attention'))
+			except Exception as e:
+
+				msg = \
+					_('''It was not possible to import the file!
+
+%s''') % e
+
+				# Translators: Message displayed to the user in case of errors when importing the CSV file
+				gui.messageBox(msg, _('Attention'))
 		dlg.Destroy()
 		self.show_all_records()
 		self.contactList.SetFocus()
@@ -209,9 +233,15 @@ class ContactList(wx.Dialog):
 			try:
 				mypath = dlg.GetPath()
 				core.to_csv(mypath)
-			except:
-				wx.MessageBox(
-					_('It was not possible to export the file!'), _('Attention'))
+			except Exception as e:
+
+				msg = \
+					_('''It was not possible to export the file!
+
+%s''') % e
+
+				# Translators: Message displayed to the user in case of errors when exporting the CSV file
+				gui.messageBox(msg, _('Attention'))
 		dlg.Destroy()
 		self.show_all_records()
 		self.contactList.SetFocus()
@@ -222,14 +252,14 @@ class ContactList(wx.Dialog):
 		if selectedRow == 0:
 			# Translators: Dialog when there is no row selected in the
 			# ObjectListView.
-			wx.MessageBox(_('The agenda is empty!'), _('Attention'))
+			gui.messageBox(_('The agenda is empty!'), _('Attention'))
 			return
 		dlg = wx.MessageDialog(None, _('This operation erases all records from the phone book., do you wish to continue?'), _('Attention'),
 							   wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION)
 		resposta = dlg.ShowModal()
 		if resposta == wx.ID_YES:
 			core.reset_record()
-			wx.MessageBox(_('agenda deleted!'), _('Success'))
+			gui.messageBox(_('agenda deleted!'), _('Success'))
 		self.show_all_records()
 		self.contactList.SetFocus()
 

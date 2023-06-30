@@ -16,10 +16,11 @@ import wx
 import gui
 
 # imports from the Contact Book addon.
-from .manage.model import Section
+from .model import Section
 from .configPanel import *
 from .main import ContactList
 
+# Get the title of the addon defined in the summary.
 ADDON_SUMMARY = addonHandler.getCodeAddon().manifest["summary"]
 
 # Start the initDB function.
@@ -54,7 +55,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Translators: Lists all contacts registered in the phonebook.
 		contactList = self.mainMenu.Append(-1, _('&Contact list'))
 		gui.mainFrame.sysTrayIcon.Bind(
-			wx.EVT_MENU, self.script_contactList, contactList)
+			wx.EVT_MENU, self.script_activateContactBook, contactList)
 
 		# Translators: Open the help page.
 		help = self.mainMenu.Append(-1, _('&Help'))
@@ -63,15 +64,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Translators: Creates the item in the NVDA menu.
 		toolsMenu.AppendSubMenu(self.mainMenu, _('&contact book'))
 
-	#defining a script with decorator:
-	@script(
-		gesture='kb:Windows+alt+L',
-
-		# Translators: Text displayed in NVDA help.
-		description=_('Displays a window with all contacts registered in the phonebook.'),
-		category=ADDON_SUMMARY
-		)
-	def script_contactList(self, gesture):
+	def onContactBook(self, event):
 		# Translators: Title of contact list dialog box.
 		self.dlg = ContactList(gui.mainFrame, _('Contact list.'))
 		gui.mainFrame.prePopup()
@@ -81,12 +74,23 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	#defining a script with decorator:
 	@script(
+		gesture='kb:Windows+alt+L',
+
+		# Translators: Text displayed in NVDA help.
+		description=_('Displays a window with all contacts registered in the phonebook.'),
+		category=ADDON_SUMMARY
+		)
+	def script_activateContactBook(self, gesture):
+		wx.CallAfter(self.onContactBook, None)
+
+	#defining a script with decorator:
+	@script(
 		gesture='kb:Windows+alt+J',
 
 		# Translators: Text displayed in NVDA help.
 		description=_('Opens the Contact Book add-on help page.'),
 		category=ADDON_SUMMARY
-)
+	)
 	def script_onHelp(self, gesture):
 		"""Open the addon's help page"""
 		wx.LaunchDefaultBrowser(addonHandler.Addon(os.path.join(

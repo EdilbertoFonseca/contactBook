@@ -12,11 +12,15 @@ import os
 import config
 
 # Non-standard Python imports from NVDA.
-from ..lib import sqlite3
-from ..lib import csv
+import sys
+baseDir = os.path.dirname(__file__)
+libs = os.path.join(baseDir, "lib")
+sys.path.append(libs)
+import sqlite3
+import csv
 
 from .model import Section, ObjectContact
-from ..configPanel import *
+from .configPanel import *
 
 # . Function that retrieves all data from the datadataBase.
 

@@ -26,7 +26,7 @@ GetPartialTextExtents() which does not work with GCDC's (as of wx 2.8).
 
 import wx
 import bisect
-from ..wordwrap import wordwrap
+from wordwrap import wordwrap
 
 
 class WordWrapRenderer:

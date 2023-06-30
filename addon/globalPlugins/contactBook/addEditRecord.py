@@ -2,19 +2,26 @@
 
 # Dialog box for adding and editing records.
 # Author: Edilberto Fonseca.
-# E-mail: <edilberto.fonseca@outlook.com>
+# Email: <edilberto.fonseca@outlook.com>
 # Creation date: 30/11/2022.
 
 # Standard NVDA imports.
 import addonHandler
 import config
+import os
 import wx
+import gui
 
 # Non-standard Python imports from NVDA.
-from .lib.masked import TextCtrl
+import sys
+baseDir = os.path.dirname(__file__)
+libs = os.path.join(baseDir, "lib")
+sys.path.append(libs)
+from  masked import TextCtrl
 
 # imports from the Contact Book addon.
-from .manage import controller as core
+from . import controller as core
+from .update import *
 
 # For translation process
 addonHandler.initTranslation()
@@ -30,12 +37,8 @@ class AddEditRecDialog(wx.Dialog):
 
 		wx.Dialog.__init__(self, parent, title=_('{} Record').format(title), size=(WIDTH, HEIGHT))
 		# Check and apply settings.
-		if config.conf["contactBook"]["formatPhone"] == False:
-			self.formatCell = '(##) #####-####'
-			self.formatLandline = '(##) ####-####'
-		else:
-			self.ormatCell = ''
-			self.formatLandline = ''
+		self.formatCellPhone = config.conf[ourAddon.name]["formatCellPhone"]
+		self.formatLandline = config.conf[ourAddon.name]["formatLandline"]
 
 		self.addRecord = addRecord
 		self.selectedRow = row
@@ -53,7 +56,7 @@ class AddEditRecDialog(wx.Dialog):
 		self.textName = wx.TextCtrl(self.panel, -1, value=name, size=(200, 25))
 
 		labelCell = wx.StaticText(self.panel, label=_('Cell phone: '))
-		self.textCell = TextCtrl(self.panel, value=cell, mask=self.formatCell)
+		self.textCell = TextCtrl(self.panel, value=cell, mask=self.formatCellPhone)
 
 		labelLandline = wx.StaticText(self.panel, label=_('Landline: '))
 		self.textLandline = TextCtrl(
@@ -99,7 +102,7 @@ class AddEditRecDialog(wx.Dialog):
 		if Name == '' or Cell == '' or landline == '':
 			# Translators: Dialog displayed when one of the required fields is
 			# empty.
-			wx.MessageBox(_('Name, mobile and landline are required!'),
+			gui.messageBox(_('Name, mobile and landline are required!'),
 						  _('Error'))
 			return
 		if '-' in Email:
@@ -117,7 +120,7 @@ class AddEditRecDialog(wx.Dialog):
 		core.add_record(data)
 
 		# Translators:  Dialog displayed upon completion.
-		wx.MessageBox(_('Added contact'),
+		gui.messageBox(_('Added contact'),
 					  _('Success!'), wx.ICON_INFORMATION)
 
 		# Clear all fields to add a new record.

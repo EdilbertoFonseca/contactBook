@@ -27,7 +27,7 @@ addon_info = {
 	# on add-on information from add-ons manager
 	"addon_description": _("""This add-on creates an agenda where we can save phone numbers, e-mails of people and companies that we deem necessary."""),
 	# version
-	"addon_version": "2023.1.0",
+	"addon_version": "2023.2.1",
 	# Author(s)
 	"addon_author": u"Edilberto Fonseca <edilberto.fonseca@outlook.com>",
 	# URL for the add-on documentation support
